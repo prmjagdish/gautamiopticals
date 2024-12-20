@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup - Gautami Opticals</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./customer_auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="home">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="search" style="width: 600px;">
+                <form action="" >
+                    <input type="text" placeholder="Search here...">
+                    <button><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="rightmenu">
+                <ul>
+                    <li class="help-link" id="loginButton"><a href="./customer_care.html">Help</a></li>
+                    <li class="auth-link"><a href="./customer_auth.html"><i class="fa fa-user"></i></a></li>
+                    <li class="cart-link"><i style="font-size:24px" class="fa">&#xf07a;</i></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="nav">
+            <ul>
+                <li><a href="./all_product.html">Eyeglasses</a></li>
+                <li><a href="#">Sunglasses</a></li>
+                <li><a href="#">Contact Lenses</a></li>
+                <li><a href="#">Computer Glasses</a></li>
+                <li><a href="#">Reading Glasses</a></li>
+                <li><a href="#">Power Sunglasses</a></li>
+                <li><a href="#">Home Eye Test</a></li>
+            </ul>
+        </nav>
+
+        <!-- Auth Container -->
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form active" id="loginForm">
+                <h2>Welcome Back!</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Email or Phone</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="password-input">
+                            <input type="password" required>
+                            <i class="fa fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-button">Login</button>
+                </form>
+
+                <div class="social-login">
+                    <p>Or continue with</p>
+                    <div class="social-buttons">
+                        <button class="google-btn">
+                            <i class="fa fa-google"></i> Google
+                        </button>
+                        <button class="facebook-btn">
+                            <i class="fa fa-facebook"></i> Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-form" id="signupForm">
+                <h2>Create Account</h2>
+                <form>
+                    <div class="name-group">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="password-input">
+                            <input type="password" required>
+                            <i class="fa fa-eye-slash toggle-password"></i>
+                        </div>
+                        <div class="password-strength"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="terms-checkbox">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="#">Terms & Conditions</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        <!-- Product Features -->
+        <section class="features-section">
+            <div class="product_features">
+                <div class="feature-item">
+                    <img src="./images/dilevary/original.png" alt="100% Genuine">
+                    <p><strong>100% GENUINE<br>PRODUCT</strong></p>
+                </div>
+                <div class="feature-item">
+                    <img src="./images/dilevary/easy_return.png" alt="Easy Delivery">
+                    <p><strong>EASY DELIVERY &<br>RETURNS</strong></p>
+                </div>
+                <div class="feature-item">
+                    <img src="./images/dilevary/cash_on.png" alt="Cash on Delivery">
+                    <p><strong>CASH ON<br>DELIVERY</strong></p>
+                </div>
+                <div class="feature-item">
+                    <img src="./images/dilevary/secure-payment.png" alt="Secure Payments">
+                    <p><strong>100% SECURE<br>PAYMENTS</strong></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+    
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer">
+            <div class="help">
+                <h5>Need a hand?</h5>
+                <ul></ul>
+                <p id="address">We're available by phone +91 9313713612 and chat from <br> 9 am–10 pm every day <br>
+                    105, Shremit plaza, Bapasitaram chowk, <br>Kamrej, Gujarat, India, 394180 <br>
+                    gautamioptiacls@gamil.com</p>
+            </div>
+            <div class="explore">
+                <h5>EXPLORE</h5>
+                <ul>
+                    <li>Men Eyeglasses</li>
+                    <li>Women Eyeglasses</li>
+                    <li>Men Sunglasses</li>
+                    <li>Women Sunglasses</li>
+                    <li>Contact Lens</li>
+                    <li>Accessories</li>
+                </ul>
+            </div>
+            <div class="tips_and_guide">
+                <h5>TIPS & GUIDE</h5>
+                <ul>
+                    <li>Size Guide</li>
+                    <li>Prescription Guide</li>
+                    <li>Face Shape Guide</li>
+                </ul>
+            </div>
+            <div class="about">
+                <h5>ABOUT</h5>
+                <ul>
+                    <li>Our Story</li>
+                    <li>Delivery And Cancellation</li>
+                    <li>Return Refund And Exchange</li>
+                    <li>Terms Of Use</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./customer_auth.js"></script>
+</body>
+</html> 

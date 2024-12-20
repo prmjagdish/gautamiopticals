@@ -1,0 +1,480 @@
+/* Product Detail Container */
+.product-detail-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+/* Product Gallery */
+.product-gallery {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.zoom-lens {
+    position: absolute;
+    border: 2px solid #2563eb;
+    background-color: rgba(37, 99, 235, 0.1);
+    cursor: zoom-in;
+    display: none;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+}
+
+.thumb-btn {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 2px;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.thumb-btn.active {
+    border-color: #2563eb;
+}
+
+.thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Product Info */
+.product-info {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    color: #ffc107;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.stars span {
+    color: #666;
+    margin-left: 0.5rem;
+}
+
+.review-count {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.original-price {
+    color: #666;
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.discounted-price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.discount-badge {
+    background: #22c55e;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Product Options */
+.product-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.option-section h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.frame-options, .lens-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.frame-option, .lens-option {
+    flex: 1;
+    min-width: 150px;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.frame-option.active, .lens-option.active {
+    border-color: #2563eb;
+    background: #f0f7ff;
+}
+
+.frame-option img {
+    width: 100%;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.frame-option span {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.lens-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lens-icon {
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+.lens-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.lens-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.lens-price {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Prescription Upload */
+.prescription-section {
+    margin-top: 1rem;
+}
+
+.prescription-upload {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.prescription-upload input {
+    display: none;
+}
+
+.prescription-upload label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border: 2px dashed #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prescription-upload label:hover {
+    border-color: #2563eb;
+    background: #f0f7ff;
+}
+
+.prescription-upload i {
+    font-size: 2rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.prescription-upload small {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Purchase Actions */
+.purchase-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.add-to-cart-btn, .buy-now-btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.add-to-cart-btn {
+    background: white;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.buy-now-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.add-to-cart-btn:hover {
+    background: #f0f7ff;
+}
+
+.buy-now-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Product Description */
+.product-description {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-description h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-description p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.specs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.spec-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.spec-value {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Mobile Product Header */
+.mobile-product-header {
+    display: none;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .product-detail-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .product-gallery {
+        position: static;
+    }
+
+    /* Show mobile header and hide desktop header */
+    .mobile-product-header {
+        display: block;
+        order: 1;
+    }
+
+    .desktop-product-header {
+        display: none;
+    }
+
+    /* Adjust spacing for mobile layout */
+    .product-description {
+        order: 2;
+    }
+
+    .main-image {
+        height: 300px;
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-info-header {
+        order: -1;
+        margin: 1rem 0;
+    }
+
+    .product-title {
+        margin-bottom: 0.75rem;
+    }
+
+    .product-rating {
+        margin-bottom: 1rem;
+    }
+
+    .product-price {
+        margin-bottom: 1.5rem;
+    }
+
+    .frame-options, .lens-options {
+        flex-direction: column;
+    }
+
+    .frame-option, .lens-option {
+        min-width: 100%;
+    }
+
+    .purchase-actions {
+        flex-direction: column;
+    }
+
+    .product-description {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .specs-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .product_features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .feature-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feature-item img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-title {
+        font-size: 1.4rem;
+    }
+
+    .product-price {
+        flex-wrap: wrap;
+    }
+
+    .specs-list {
+        grid-template-columns: 1fr;
+    }
+
+    .prescription-upload label {
+        padding: 1rem;
+    }
+
+    .product_features {
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .feature-item img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .feature-item p {
+        font-size: 0.65rem;
+    }
+} 

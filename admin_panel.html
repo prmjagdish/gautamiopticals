@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Gautami Opticals</title>
+    <link rel="stylesheet" href="./admin_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="./images/logo.png" alt="Gautami Opticals Logo" class="logo">
+                <button class="collapse-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard" data-section="Dashboard">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#products" data-section="Products">
+                            <i class="fas fa-glasses"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#orders">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="#customers">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="#analytics">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                
+                <div class="top-bar-right">
+                    <button class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                    <div class="profile-dropdown">
+                        <button class="profile-btn">
+                            <img src="./images/admin-avatar.jpg" alt="Admin">
+                            <span>Admin Name</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard hidden" id="dashboardContent">
+                <div class="welcome-header">
+                    <h1>Welcome back, Admin</h1>
+                    <p>Here's what's happening with your store today.</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <!-- <div class="stat-icon sales">
+                            <i class="fas fa-indian-rupee-sign"></i>
+                        </div> -->
+                        <div class="stat-details">
+                            <h3>Total Sales</h3>
+                            <p class="stat-value">₹45,678</p>
+                            <span class="stat-change positive">+8.3%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <!-- <div class="stat-icon orders">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div> -->
+                        <div class="stat-details">
+                            <h3>Active Orders</h3>
+                            <p class="stat-value">25</p>
+                            <span class="stat-change positive">+12.5%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <!-- <div class="stat-icon products" >
+                            <i class="fas fa-glasses"></i>
+                        </div> -->
+                        <div class="stat-details">
+                            <h3>Products</h3>
+                            <p class="stat-value">142</p>
+                            <span class="stat-change negative">-2.4%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <!-- <div class="stat-icon customers">
+                            <i class="fas fa-users"></i>
+                        </div> -->
+                        <div class="stat-details">
+                            <h3>Customers</h3>
+                            <p class="stat-value">1,234</p>
+                            <span class="stat-change positive">+5.7%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="recent-orders">
+                    <div class="section-header">
+                        <h2>Recent Orders</h2>
+                        <button class="view-all" style="font-size: 12px;">View All</button>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-123</td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="./images/customer1.jpg" alt="Customer">
+                                            <span>John Doe</span>
+                                        </div>
+                                    </td>
+                                    <td>Ray-Ban Aviator</td>
+                                    <td>₹2,499</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <button class="action-btn">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Content -->
+            <div class="products hidden" id="productsContent">
+                <div class="welcome-header">
+                    <h1>Products Management</h1>
+                    <p>Manage your product inventory</p>
+                </div>
+
+                <div class="section-actions">
+                    <button class="add-product-btn">
+                        <i class="fas fa-plus"></i> Add New Product
+                    </button>
+                </div>
+
+                <div class="products-grid">
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <select class="filter-select">
+                                <option value="">All Categories</option>
+                                <option value="eyeglasses">Eyeglasses</option>
+                                <option value="sunglasses">Sunglasses</option>
+                                <option value="contact-lenses">Contact Lenses</option>
+                            </select>
+                            <select class="filter-select">
+                                <option value="">All Brands</option>
+                                <option value="rayban">Ray-Ban</option>
+                                <option value="oakley">Oakley</option>
+                                <option value="gucci">Gucci</option>
+                            </select>
+                            <select class="filter-select">
+                                <option value="">Status</option>
+                                <option value="in-stock">In Stock</option>
+                                <option value="low-stock">Low Stock</option>
+                                <option value="out-of-stock">Out of Stock</option>
+                            </select>
+                        </div>
+                        <div class="search-products">
+                            <input type="text" placeholder="Search products...">
+                        </div>
+                    </div>
+
+                    <div class="products-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="select-all">
+                                    </th>
+                                    <th>Product</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="select-item">
+                                    </td>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="./images/product1.jpg" alt="Product">
+                                            <div>
+                                                <span class="product-name">Ray-Ban Aviator Classic</span>
+                                                <span class="product-sku">SKU: RB3025</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Sunglasses</td>
+                                    <td>Ray-Ban</td>
+                                    <td>₹7,999</td>
+                                    <td>45</td>
+                                    <td><span class="status-badge in-stock">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Add more product rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                        <span class="page-numbers">
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                        </span>
+                        <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Add Product Modal -->
+                <div class="modal" id="addProductModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Add New Product</h2>
+                            <button class="close-modal">×</button>
+                        </div>
+                        <form id="addProductForm" class="product-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="productName">Product Name*</label>
+                                    <input type="text" id="productName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productSKU">SKU*</label>
+                                    <input type="text" id="productSKU" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productCategory">Category*</label>
+                                    <select id="productCategory" required>
+                                        <option value="">Select Category</option>
+                                        <option value="eyeglasses">Eyeglasses</option>
+                                        <option value="sunglasses">Sunglasses</option>
+                                        <option value="contact-lenses">Contact Lenses</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productBrand">Brand*</label>
+                                    <select id="productBrand" required>
+                                        <option value="">Select Brand</option>
+                                        <option value="rayban">Ray-Ban</option>
+                                        <option value="oakley">Oakley</option>
+                                        <option value="gucci">Gucci</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productPrice">Price (₹)*</label>
+                                    <input type="number" id="productPrice" min="0" step="0.01" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productStock">Stock Quantity*</label>
+                                    <input type="number" id="productStock" min="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="productDescription">Description</label>
+                                <textarea id="productDescription" rows="4"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Product Images</label>
+                                <div class="image-upload-container">
+                                    <div class="image-upload">
+                                        <input type="file" id="productImages" multiple accept="image/*">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <p>Drag & Drop images or click to upload</p>
+                                        </div>
+                                    </div>
+                                    <div class="image-preview" id="imagePreview"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="cancel-btn">Cancel</button>
+                                <button type="submit" class="submit-btn">Add Product</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Content -->
+            <div class="orders hidden" id="ordersContent">
+                <div class="welcome-header">
+                    <h1>Orders Management</h1>
+                    <p>Track and manage customer orders</p>
+                </div>
+
+                <div class="orders-grid">
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <select class="filter-select">
+                                <option value="">Order Status</option>
+                                <option value="pending">Pending</option>
+                                <option value="processing">Processing</option>
+                                <option value="shipped">Shipped</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                            <select class="filter-select">
+                                <option value="">Payment Status</option>
+                                <option value="paid">Paid</option>
+                                <option value="unpaid">Unpaid</option>
+                                <option value="refunded">Refunded</option>
+                            </select>
+                            <input type="date" class="filter-select" placeholder="From Date">
+                            <input type="date" class="filter-select" placeholder="To Date">
+                        </div>
+                        <div class="search-orders">
+                            <input type="text" placeholder="Search orders...">
+                        </div>
+                    </div>
+
+                    <div class="orders-table" >
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Products</th>
+                                    <th>Total Amount</th>
+                                    <th>Order Date</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-123</td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="./images/customer1.jpg" alt="Customer">
+                                            <div>
+                                                <span class="customer-name">John Doe</span>
+                                                <span class="customer-email">john@example.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="order-products">
+                                            <span>Ray-Ban Aviator x1</span>
+                                            <span class="product-count">+2 more</span>
+                                        </div>
+                                    </td>
+                                    <td>₹7,999</td>
+                                    <td>
+                                        <div class="order-date">
+                                            <span>2024-03-20</span>
+                                            <span class="order-time">14:30</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge payment-paid">Paid</span></td>
+                                    <td><span class="status-badge order-processing">Processing</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="view-btn" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="edit-btn" title="Update Status">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Add more order rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                        <span class="page-numbers">
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                        </span>
+                        <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Order Details Modal -->
+                <div class="modal" id="orderDetailsModal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Order Details #ORD-123</h2>
+                            <button class="close-modal">×</button>
+                        </div>
+                        <div class="order-details">
+                            <div class="order-info-grid">
+                                <div class="order-info-section">
+                                    <h3>Customer Information</h3>
+                                    <div class="info-group">
+                                        <p><strong>Name:</strong> John Doe</p>
+                                        <p><strong>Email:</strong> john@example.com</p>
+                                        <p><strong>Phone:</strong> +91 98765 43210</p>
+                                    </div>
+                                </div>
+                                <div class="order-info-section">
+                                    <h3>Shipping Address</h3>
+                                    <div class="info-group">
+                                        <p>123, Main Street</p>
+                                        <p>Apartment 4B</p>
+                                        <p>Mumbai, Maharashtra 400001</p>
+                                    </div>
+                                </div>
+                                <div class="order-info-section">
+                                    <h3>Order Summary</h3>
+                                    <div class="info-group">
+                                        <p><strong>Order Date:</strong> 2024-03-20 14:30</p>
+                                        <p><strong>Payment Method:</strong> Credit Card</p>
+                                        <p><strong>Payment Status:</strong> <span class="status-badge payment-paid">Paid</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-products-list">
+                                <h3>Products</h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="product-info">
+                                                    <img src="./images/product1.jpg" alt="Product">
+                                                    <span>Ray-Ban Aviator Classic</span>
+                                                </div>
+                                            </td>
+                                            <td>₹7,999</td>
+                                            <td>1</td>
+                                            <td>₹7,999</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3">Subtotal</td>
+                                            <td>₹7,999</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">Shipping</td>
+                                            <td>₹100</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"><strong>Total</strong></td>
+                                            <td><strong>₹8,099</strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="order-timeline">
+                                <h3>Order Timeline</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item completed">
+                                        <div class="timeline-point"></div>
+                                        <div class="timeline-content">
+                                            <h4>Order Placed</h4>
+                                            <p>2024-03-20 14:30</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item completed">
+                                        <div class="timeline-point"></div>
+                                        <div class="timeline-content">
+                                            <h4>Payment Confirmed</h4>
+                                            <p>2024-03-20 14:35</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item active">
+                                        <div class="timeline-point"></div>
+                                        <div class="timeline-content">
+                                            <h4>Processing</h4>
+                                            <p>2024-03-20 15:00</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-point"></div>
+                                        <div class="timeline-content">
+                                            <h4>Shipped</h4>
+                                            <p>Pending</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-point"></div>
+                                        <div class="timeline-content">
+                                            <h4>Delivered</h4>
+                                            <p>Pending</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-actions">
+                                <button class="update-status-btn">Update Status</button>
+                                <button class="print-order-btn"><i class="fas fa-print"></i> Print Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customers Content -->
+            <!-- <div class="customers hidden" id="customersContent">
+                <div class="welcome-header">
+                    <h1>Customers Management</h1>
+                    <p>Manage your customers</p>
+                </div>
+                <div class="customers-grid">
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <select class="filter-select">
+                                <option value="">Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="blocked">Blocked</option>
+                            </select>
+                            <select class="filter-select">
+                                <option value="">Member Type</option>
+                                <option value="regular">Regular</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                            <select class="filter-select">
+                                <option value="">Sort By</option>
+                                <option value="recent">Most Recent</option>
+                                <option value="orders">Most Orders</option>
+                                <option value="spending">Highest Spending</option>
+                            </select>
+                        </div>
+                        <div class="search-customers">
+                            <input type="text" placeholder="Search customers...">
+                        </div>
+                    </div>
+
+                    <div class="customers-table">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th>Contact</th>
+                                        <th>Total Orders</th>
+                                        <th>Total Spent</th>
+                                        <th>Last Order</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="customer-info">
+                                                <img src="./images/customer1.jpg" alt="Customer">
+                                                <div>
+                                                    <span class="customer-name">John Doe</span>
+                                                    <span class="member-type premium">Premium Member</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="customer-contact">
+                                                <span>john@example.com</span>
+                                                <span>+91 98765 43210</span>
+                                            </div>
+                                        </td>
+                                        <td>15</td>
+                                        <td>₹45,999</td>
+                                        <td>
+                                            <div class="last-order">
+                                                <span>2024-03-20</span>
+                                                <span class="order-id">#ORD-123</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge customer-active">Active</span></td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="view-customer-btn" title="View Details">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="edit-btn" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="block-btn" title="Block">
+                                                    <i class="fas fa-ban"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                        <span class="page-numbers">
+                            <button class="active">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                        </span>
+                        <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Analytics Content -->
+            <!-- <div class="analytics hidden" id="analyticsContent">
+                <div class="welcome-header">
+                    <h1>Analytics Management</h1>
+                    <p>View your analytics</p>
+                </div>
+            </div> -->
+
+            <!-- Settings Content -->
+            <div class="settings hidden" id="settingsContent">
+                <div class="welcome-header" style="margin: 20px 0px 30px 0px; padding-left: 20px;">
+                    <h1>Settings</h1>
+                    <p>Manage your store settings</p>
+                </div>
+                
+                <div class="settings-grid">
+                    <div class="settings-nav" style="margin-left: 20px;">
+                        <button class="settings-tab active" data-tab="general">
+                            <i class="fas fa-cog"></i>
+                            General Settings
+                        </button>
+                        <button class="settings-tab" data-tab="profile">
+                            <i class="fas fa-user"></i>
+                            Profile Settings
+                        </button>
+                        <button class="settings-tab" data-tab="store">
+                            <i class="fas fa-store"></i>
+                            Store Settings
+                        </button>
+                        <button class="settings-tab" data-tab="payment">
+                            <i class="fas fa-credit-card"></i>
+                            Payment Settings
+                        </button>
+                        <button class="settings-tab" data-tab="notifications">
+                            <i class="fas fa-bell"></i>
+                            Notification Settings
+                        </button>
+                    </div>
+
+                    <div class="settings-content">
+                        <!-- General Settings -->
+                        <div class="settings-panel active" id="generalSettings">
+                            <h2>General Settings</h2>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>Language</label>
+                                    <select>
+                                        <option value="en">English</option>
+                                        <option value="hi">Hindi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Time Zone</label>
+                                    <select>
+                                        <option value="IST">Indian Standard Time (IST)</option>
+                                        <option value="UTC">UTC</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Date Format</label>
+                                    <select>
+                                        <option value="dd/mm/yyyy">DD/MM/YYYY</option>
+                                        <option value="mm/dd/yyyy">MM/DD/YYYY</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="save-btn">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Profile Settings -->
+                        <div class="settings-panel" id="profileSettings">
+                            <h2>Profile Settings</h2>
+                            <form class="settings-form">
+                                <div class="profile-image-upload">
+                                    <img src="./images/admin-avatar.jpg" alt="Profile">
+                                    <div class="upload-actions">
+                                        <button type="button" class="upload-btn">
+                                            <i class="fas fa-camera"></i> Change Photo
+                                        </button>
+                                        <button type="button" class="remove-btn">
+                                            <i class="fas fa-trash"></i> Remove
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" value="Admin Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" value="admin@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" value="+91 98765 43210">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="save-btn">Update Profile</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Store Settings -->
+                        <div class="settings-panel" id="storeSettings">
+                            <h2>Store Settings</h2>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>Store Name</label>
+                                    <input type="text" value="Gautami Opticals">
+                                </div>
+                                <div class="form-group">
+                                    <label>Store Address</label>
+                                    <textarea rows="3">123 Main Street, Mumbai, Maharashtra 400001</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Currency</label>
+                                    <select>
+                                        <option value="INR">Indian Rupee (₹)</option>
+                                        <option value="USD">US Dollar ($)</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="save-btn">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./admin_script.js"></script>
+</body>
+</html> 

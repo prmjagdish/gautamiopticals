@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Gautami Opticals</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="home">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="search">
+                <form action="">
+                    <input type="text" placeholder="Search here...">
+                    <button><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="rightmenu">
+                <ul>
+                    <!-- <li class="help-link" id="loginButton"><a href="./customer_care.html">Help</a></li> -->
+                    <li class="auth-link"><a href="./customer_auth.html"><i class="fa fa-user"></i></a></li>
+                    <li class="cart-link"><i class="fa fa-shopping-cart"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="checkout-container">
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="product-summary">
+                    <img src="./images/trending_eyeglasses/trending_eyeglasses.jpg" alt="Product">
+                    <div class="product-details">
+                        <h3>Ray-Ban Aviator Classic</h3>
+                        <p class="product-specs">Metal Frame • Single Vision Lens</p>
+                        <div class="product-price">
+                            <span class="price">₹7,999</span>
+                            <span class="original-price">₹9,999</span>
+                            <span class="discount">20% OFF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-breakdown">
+                    <div class="price-row">
+                        <span>Subtotal</span>
+                        <span>₹7,999</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Shipping</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="price-row total">
+                        <span>Total</span>
+                        <span>₹7,999</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <h2>Shipping Information</h2>
+                <form id="shippingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" placeholder="Street Address" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>PIN Code</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+
+                    <h2>Payment Method</h2>
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cod" checked>
+                            <span class="radio-label">Cash on Delivery</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="online">
+                            <span class="radio-label">Online Payment</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="place-order-btn">Place Order</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Product Features -->
+        <section class="features-section">
+            <div class="product_features">
+                <div class="feature-item">
+                    <img src="./images/dilevary/original.png" alt="100% Genuine">
+                    <p><strong>100% GENUINE<br>PRODUCT</strong></p>
+                </div>
+                <div class="feature-item">
+                    <img src="./images/dilevary/easy_return.png" alt="Easy Delivery">
+                    <p><strong>EASY DELIVERY &<br>RETURNS</strong></p>
+                </div>
+                <div class="feature-item">
+                    <img src="./images/dilevary/cash_on.png" alt="Cash on Delivery">
+                    <p><strong>CASH ON<br>DELIVERY</strong></p>
+                </div>
+                <div class="feature-item">
+                    <img src="./images/dilevary/secure-payment.png" alt="Secure Payments">
+                    <p><strong>100% SECURE<br>PAYMENTS</strong></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer">
+            <div class="help">
+                <h5>Need a hand?</h5>
+                <ul></ul>
+                <p id="address">We're available by phone +91 9313713612 and chat from <br> 9 am–10 pm every day <br>
+                    105, Shremit plaza, Bapasitaram chowk, <br>Kamrej, Gujarat, India, 394180 <br>
+                    gautamioptiacls@gamil.com</p>
+            </div>
+            <div class="explore">
+                <h5>EXPLORE</h5>
+                <ul>
+                    <li>Men Eyeglasses</li>
+                    <li>Women Eyeglasses</li>
+                    <li>Men Sunglasses</li>
+                    <li>Women Sunglasses</li>
+                    <li>Contact Lens</li>
+                    <li>Accessories</li>
+                </ul>
+            </div>
+            <div class="tips_and_guide">
+                <h5>TIPS & GUIDE</h5>
+                <ul>
+                    <li>Size Guide</li>
+                    <li>Prescription Guide</li>
+                    <li>Face Shape Guide</li>
+                </ul>
+            </div>
+            <div class="about">
+                <h5>ABOUT</h5>
+                <ul>
+                    <li>Our Story</li>
+                    <li>Delivery And Cancellation</li>
+                    <li>Return Refund And Exchange</li>
+                    <li>Terms Of Use</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="./checkout.js"></script>
+</body>
+</html> 
